@@ -55,14 +55,6 @@ function App() {
     getVideo();
   }, [videoRef]);
 
-  // const boxWithShapes = function () {
-  //   return (
-  //     <div className="empty-box">
-  //       <div className="square"></div>
-  //     </div>
-  //   );
-  // };
-
   const Circle = function App() {
     return <div className="circle"></div>;
   };
@@ -100,24 +92,7 @@ function App() {
       <button onClick={takePicture} className="btn btn-danger container">
         Continue
       </button>
-
       <canvas className="container" ref={photoRef}></canvas>
-      <div className="main-box">
-        <div className="empty-box">
-          <div className="square"></div>
-        </div>
-
-        <div className="empty-box">
-          <div className="circle"></div>
-        </div>
-
-        <div className="empty-box">{/* <div className="circle"></div> */}</div>
-
-        <div className="empty-box">
-          <div className="triangle-up "></div>
-        </div>
-      </div>
-
       <button onClick={clearImage} className="btn btn-primary container">
         Clear Image
       </button>
