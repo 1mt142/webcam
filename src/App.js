@@ -1,9 +1,10 @@
-import React, { Children, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
+  const TOTAL_SHAPE = 12;
   let videoRef = useRef(null);
 
   let photoRef = useRef(null);
@@ -76,39 +77,24 @@ function App() {
     return <div className="empty-box">{props.children}</div>;
   };
 
+  let newArray = [];
+  for (let i = 0; i < 12; i++) {
+    newArray.push(Math.floor(Math.random() * 4));
+  }
+
+  const objList = {
+    0: <Circle />,
+    1: <Triangle />,
+    2: <Square />,
+    3: "",
+  };
+  var item = Math.floor(Math.random() * 4);
   return (
     <div className="container">
       <div className="main-box">
-        <EmptyBox>
-          <Circle />
-        </EmptyBox>{" "}
-        <EmptyBox>
-          <Circle />
-        </EmptyBox>{" "}
-        <EmptyBox></EmptyBox>{" "}
-        <EmptyBox>
-          <Triangle />
-        </EmptyBox>{" "}
-        <EmptyBox>
-          <Square />
-        </EmptyBox>{" "}
-        <EmptyBox></EmptyBox>
-        <EmptyBox>
-          <Triangle />
-        </EmptyBox>
-        <EmptyBox>
-          <Circle />
-        </EmptyBox>
-        <EmptyBox>
-          <Circle />
-        </EmptyBox>{" "}
-        <EmptyBox>
-          <Square />
-        </EmptyBox>{" "}
-        <EmptyBox></EmptyBox>{" "}
-        <EmptyBox>
-          <Circle />
-        </EmptyBox>
+        {newArray.map((data, index) => {
+          return <EmptyBox key={index}>{objList[data]}</EmptyBox>;
+        })}
       </div>
       <video ref={videoRef} className="container"></video>
       <button onClick={takePicture} className="btn btn-danger container">
