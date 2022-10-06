@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { Children, useEffect, useRef } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -54,16 +54,62 @@ function App() {
     getVideo();
   }, [videoRef]);
 
-  const boxWithShapes = function () {
-    return (
-      <div className="empty-box">
-        <div className="square"></div>
-      </div>
-    );
+  // const boxWithShapes = function () {
+  //   return (
+  //     <div className="empty-box">
+  //       <div className="square"></div>
+  //     </div>
+  //   );
+  // };
+
+  const Circle = function App() {
+    return <div className="circle"></div>;
+  };
+
+  const Triangle = function App() {
+    return <div className="triangle-up "></div>;
+  };
+  const Square = function App() {
+    return <div className="square"></div>;
+  };
+  const EmptyBox = function App(props) {
+    return <div className="empty-box">{props.children}</div>;
   };
 
   return (
     <div className="container">
+      <div className="main-box">
+        <EmptyBox>
+          <Circle />
+        </EmptyBox>{" "}
+        <EmptyBox>
+          <Circle />
+        </EmptyBox>{" "}
+        <EmptyBox></EmptyBox>{" "}
+        <EmptyBox>
+          <Triangle />
+        </EmptyBox>{" "}
+        <EmptyBox>
+          <Square />
+        </EmptyBox>{" "}
+        <EmptyBox></EmptyBox>
+        <EmptyBox>
+          <Triangle />
+        </EmptyBox>
+        <EmptyBox>
+          <Circle />
+        </EmptyBox>
+        <EmptyBox>
+          <Circle />
+        </EmptyBox>{" "}
+        <EmptyBox>
+          <Square />
+        </EmptyBox>{" "}
+        <EmptyBox></EmptyBox>{" "}
+        <EmptyBox>
+          <Circle />
+        </EmptyBox>
+      </div>
       <video ref={videoRef} className="container"></video>
       <button onClick={takePicture} className="btn btn-danger container">
         Continue

@@ -1,14 +1,20 @@
+:root {
+  --shapeColorBlue: #1e90ff;
+  --shapeColorRed: #ff1e1e;
+  --shapeColorGreen: #065f15;
+}
 .main-box {
   display: flex;
-  height: 200px;
-  width: 220px;
+  flex-wrap: wrap;
+  height: 180px;
+  width: 228px;
   border: 1px solid;
-  background-color: #5550;
+  background-color: #607d8b30;
 }
 .circle {
   height: 42px;
   width: 42px;
-  background-color: #555;
+  background-color: var(--shapeColorBlue);
   border-radius: 50%;
 }
 .triangle-up {
@@ -16,13 +22,13 @@
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 42px solid #555;
+  border-bottom: 42px solid var(--shapeColorRed);
 }
 
 .square {
   height: 42px;
   width: 42px;
-  background-color: #555;
+  background-color: var(--shapeColorGreen);
 }
 
 .empty-box {
