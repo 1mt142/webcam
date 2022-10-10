@@ -10,7 +10,17 @@
   width: 228px;
   border: 1px solid;
   background-color: #607d8b30;
+  /* position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;   */
 }
+
+/* .stack-top{
+  z-index: 9;
+  margin: 20px; 
+} */
+
 .circle {
   height: 42px;
   width: 42px;
@@ -39,3 +49,10 @@
   margin: 3px;
   background-color: rgb(143 134 134 / 0%);
 }
+
+#canvas-id{
+  position: relative;
+}
+
+
+
